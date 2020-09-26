@@ -7,24 +7,24 @@ https://github.com/zhedahht/CodingInterviewChinese2/blob/master/LICENSE.txt)
 *******************************************************************/
 
 //==================================================================
-// ¡¶½£Ö¸Offer¡ª¡ªÃûÆóÃæÊÔ¹Ù¾«½²µäÐÍ±à³ÌÌâ¡·´úÂë
-// ×÷Õß£ººÎº£ÌÎ
+// ã€Šå‰‘æŒ‡Offerâ€”â€”åä¼é¢è¯•å®˜ç²¾è®²å…¸åž‹ç¼–ç¨‹é¢˜ã€‹ä»£ç 
+// ä½œè€…ï¼šä½•æµ·æ¶›
 //==================================================================
 
-// ÃæÊÔÌâ3£¨Ò»£©£ºÕÒ³öÊý×éÖÐÖØ¸´µÄÊý×Ö
-// ÌâÄ¿£ºÔÚÒ»¸ö³¤¶ÈÎªnµÄÊý×éÀïµÄËùÓÐÊý×Ö¶¼ÔÚ0µ½n-1µÄ·¶Î§ÄÚ¡£Êý×éÖÐÄ³Ð©Êý×ÖÊÇÖØ¸´µÄ£¬µ«²»ÖªµÀÓÐ¼¸¸öÊý×ÖÖØ¸´ÁË£¬
-// Ò²²»ÖªµÀÃ¿¸öÊý×ÖÖØ¸´ÁË¼¸´Î¡£ÇëÕÒ³öÊý×éÖÐÈÎÒâÒ»¸öÖØ¸´µÄÊý×Ö¡£ÀýÈç£¬Èç¹ûÊäÈë³¤¶ÈÎª7µÄÊý×é{2, 3, 1, 0, 2, 5, 3}£¬
-// ÄÇÃ´¶ÔÓ¦µÄÊä³öÊÇÖØ¸´µÄÊý×Ö2»òÕß3¡£
+// é¢è¯•é¢˜3ï¼ˆä¸€ï¼‰ï¼šæ‰¾å‡ºæ•°ç»„ä¸­é‡å¤çš„æ•°å­—
+// é¢˜ç›®ï¼šåœ¨ä¸€ä¸ªé•¿åº¦ä¸ºnçš„æ•°ç»„é‡Œçš„æ‰€æœ‰æ•°å­—éƒ½åœ¨0åˆ°n-1çš„èŒƒå›´å†…ã€‚æ•°ç»„ä¸­æŸäº›æ•°å­—æ˜¯é‡å¤çš„ï¼Œä½†ä¸çŸ¥é“æœ‰å‡ ä¸ªæ•°å­—é‡å¤äº†ï¼Œ
+// ä¹Ÿä¸çŸ¥é“æ¯ä¸ªæ•°å­—é‡å¤äº†å‡ æ¬¡ã€‚è¯·æ‰¾å‡ºæ•°ç»„ä¸­ä»»æ„ä¸€ä¸ªé‡å¤çš„æ•°å­—ã€‚ä¾‹å¦‚ï¼Œå¦‚æžœè¾“å…¥é•¿åº¦ä¸º7çš„æ•°ç»„{2, 3, 1, 0, 2, 5, 3}ï¼Œ
+// é‚£ä¹ˆå¯¹åº”çš„è¾“å‡ºæ˜¯é‡å¤çš„æ•°å­—2æˆ–è€…3ã€‚
 
 #include <cstdio>
 
-// ²ÎÊý:
-//        numbers:     Ò»¸öÕûÊýÊý×é
-//        length:      Êý×éµÄ³¤¶È
-//        duplication: (Êä³ö) Êý×éÖÐµÄÒ»¸öÖØ¸´µÄÊý×Ö
-// ·µ»ØÖµ:             
-//        true  - ÊäÈëÓÐÐ§£¬²¢ÇÒÊý×éÖÐ´æÔÚÖØ¸´µÄÊý×Ö
-//        false - ÊäÈëÎÞÐ§£¬»òÕßÊý×éÖÐÃ»ÓÐÖØ¸´µÄÊý×Ö
+// å‚æ•°:
+//        numbers:     ä¸€ä¸ªæ•´æ•°æ•°ç»„
+//        length:      æ•°ç»„çš„é•¿åº¦
+//        duplication: (è¾“å‡º) æ•°ç»„ä¸­çš„ä¸€ä¸ªé‡å¤çš„æ•°å­—
+// è¿”å›žå€¼:             
+//        true  - è¾“å…¥æœ‰æ•ˆï¼Œå¹¶ä¸”æ•°ç»„ä¸­å­˜åœ¨é‡å¤çš„æ•°å­—
+//        false - è¾“å…¥æ— æ•ˆï¼Œæˆ–è€…æ•°ç»„ä¸­æ²¡æœ‰é‡å¤çš„æ•°å­—
 bool duplicate(int numbers[], int length, int* duplication)
 {
 	if (numbers == nullptr || length <= 0)
@@ -46,7 +46,7 @@ bool duplicate(int numbers[], int length, int* duplication)
 				return true;
 			}
 
-			// ½»»»numbers[i]ºÍnumbers[numbers[i]]             
+			// äº¤æ¢numbers[i]å’Œnumbers[numbers[i]]             
 			int temp = numbers[i];
 			numbers[i] = numbers[temp];
 			numbers[temp] = temp;
@@ -56,95 +56,3 @@ bool duplicate(int numbers[], int length, int* duplication)
 	return false;
 }
 
-// ====================²âÊÔ´úÂë====================
-bool contains(int array[], int length, int number)
-{
-	for (int i = 0; i < length; ++i)
-	{
-		if (array[i] == number)
-			return true;
-	}
-
-	return false;
-}
-
-void test(char* testName, int numbers[], int lengthNumbers, int expected[], int expectedExpected, bool validArgument)
-{
-	printf("%s begins: ", testName);
-
-	int duplication;
-	bool validInput = duplicate(numbers, lengthNumbers, &duplication);
-
-	if (validArgument == validInput)
-	{
-		if (validArgument)
-		{
-			if (contains(expected, expectedExpected, duplication))
-				printf("Passed.\n");
-			else
-				printf("FAILED.\n");
-		}
-		else
-			printf("Passed.\n");
-	}
-	else
-		printf("FAILED.\n");
-}
-
-// ÖØ¸´µÄÊý×ÖÊÇÊý×éÖÐ×îÐ¡µÄÊý×Ö
-void test1()
-{
-	int numbers[] = { 2, 1, 3, 1, 4 };
-	int duplications[] = { 1 };
-	test("Test1", numbers, sizeof(numbers) / sizeof(int), duplications, sizeof(duplications) / sizeof(int), true);
-}
-
-// ÖØ¸´µÄÊý×ÖÊÇÊý×éÖÐ×î´óµÄÊý×Ö
-void test2()
-{
-	int numbers[] = { 2, 4, 3, 1, 4 };
-	int duplications[] = { 4 };
-	test("Test2", numbers, sizeof(numbers) / sizeof(int), duplications, sizeof(duplications) / sizeof(int), true);
-}
-
-// Êý×éÖÐ´æÔÚ¶à¸öÖØ¸´µÄÊý×Ö
-void test3()
-{
-	int numbers[] = { 2, 4, 2, 1, 4 };
-	int duplications[] = { 2, 4 };
-	test("Test3", numbers, sizeof(numbers) / sizeof(int), duplications, sizeof(duplications) / sizeof(int), true);
-}
-
-// Ã»ÓÐÖØ¸´µÄÊý×Ö
-void test4()
-{
-	int numbers[] = { 2, 1, 3, 0, 4 };
-	int duplications[] = { -1 }; // not in use in the test function
-	test("Test4", numbers, sizeof(numbers) / sizeof(int), duplications, sizeof(duplications) / sizeof(int), false);
-}
-
-// Ã»ÓÐÖØ¸´µÄÊý×Ö
-void test5()
-{
-	int numbers[] = { 2, 1, 3, 5, 4 };
-	int duplications[] = { -1 }; // not in use in the test function
-	test("Test5", numbers, sizeof(numbers) / sizeof(int), duplications, sizeof(duplications) / sizeof(int), false);
-}
-
-// ÎÞÐ§µÄÊäÈë
-void test6()
-{
-	int* numbers = nullptr;
-	int duplications[] = { -1 }; // not in use in the test function
-	test("Test6", numbers, 0, duplications, sizeof(duplications) / sizeof(int), false);
-}
-
-void main()
-{
-	test1();
-	test2();
-	test3();
-	test4();
-	test5();
-	test6();
-}
